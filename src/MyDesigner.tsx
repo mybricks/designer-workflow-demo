@@ -2,7 +2,7 @@ import React, {useCallback, useRef} from "react";
 import {message} from "antd";
 import css from "./MyDesigner.less";
 
-import Designer from '@mybricks/designer-topl';
+import Designer from '@mybricks/designer-flow';
 import servicePlugin, {call as callConnectorHttp} from "@mybricks/plugin-connector-http"; //连接器插件和运行时
 
 const config = {
@@ -24,6 +24,24 @@ const config = {
         resolve(null)
       }
     })
+  },
+  toplView: {
+    title: '指标列表',
+    cards: {
+      displayFlat: false,
+      adder: {
+        startWith() {
+          return new Promise(resolve => {
+            resolve(
+              [
+                {title: '测试菜单'}
+              ]
+            )
+          })
+        }
+      }
+    },
+    useStrict: false
   },
   com: {//组件运行配置
     env: {

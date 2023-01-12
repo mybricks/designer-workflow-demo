@@ -54,7 +54,7 @@ module.exports = {
     static: {
       directory: outputPath,
     },
-    port: 8000,
+    port: 8003,
     host: '0.0.0.0',
     // compress: true,
     // hot: true,
